@@ -85,6 +85,7 @@ namespace Api_videogames.DAO
                         where ID = @id";
 
 			var comando = new MySqlCommand(query, conexao);
+			comando.Parameters.AddWithValue("@id", videogame.ID);
 			comando.Parameters.AddWithValue("@titulo", videogame.Titulo);
 			comando.Parameters.AddWithValue("@plataforma", videogame.Plataforma);
 			comando.Parameters.AddWithValue("@genero", videogame.Genero);
